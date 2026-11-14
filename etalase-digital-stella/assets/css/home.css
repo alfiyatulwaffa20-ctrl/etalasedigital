@@ -1,0 +1,218 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 20px;
+    border: 1px solid #ececf0;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(31, 35, 45, 0.08);
+}
+
+.brand {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 10px;
+    color: #252630;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand strong {
+    color: #df2933;
+}
+
+.header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.user-greeting {
+    margin-right: 3px;
+    color: #656771;
+    font-size: 13px;
+}
+
+.user-greeting strong {
+    color: #252630;
+}
+
+.role-badge {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #fff0f1;
+    color: #b91f29;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+}
+
+.nav-button {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 13px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-1px);
+}
+
+.nav-button-primary {
+    background: #df2933;
+    box-shadow: 0 4px 11px rgba(223, 41, 51, 0.18);
+    color: #ffffff;
+}
+
+.nav-button-primary:hover {
+    background: #bd202a;
+    box-shadow: 0 6px 15px rgba(223, 41, 51, 0.24);
+}
+
+.nav-button-light {
+    border-color: #e8e8ec;
+    background: #ffffff;
+    color: #50515b;
+}
+
+.nav-button-light:hover {
+    background: #f7f7f9;
+}
+
+.nav-button-logout {
+    border-color: #f1d7d9;
+    background: #fff8f8;
+    color: #b91f29;
+}
+
+.nav-button-logout:hover {
+    background: #fff0f1;
+}
+
+@media (max-width: 760px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 420px) {
+    .site-header {
+        padding: 12px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .brand img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header-actions {
+        gap: 7px;
+    }
+
+    .user-greeting {
+        flex-basis: 100%;
+    }
+
+    .nav-button {
+        min-height: 35px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+}
+
+.project-actions {
+    display: flex;
+    gap: 9px;
+    margin-top: 12px;
+}
+
+.project-actions .project-action {
+    display: inline-flex;
+    min-height: 39px;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-right: 0;
+    padding: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.project-action svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+}
+
+.project-actions .project-action-edit {
+    border-color: #f0cd6e;
+    background: linear-gradient(135deg, #ffe99e, #ffd45b);
+    box-shadow: 0 3px 8px rgba(185, 133, 16, 0.13);
+    color: #644800;
+}
+
+.project-actions .project-action-edit:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ffe27d, #ffc83d);
+    box-shadow: 0 6px 12px rgba(185, 133, 16, 0.2);
+}
+
+.project-actions .project-action-delete {
+    border-color: #f0b4b8;
+    background: linear-gradient(135deg, #fff0f1, #ffdfe1);
+    box-shadow: 0 3px 8px rgba(185, 31, 41, 0.1);
+    color: #a51f28;
+}
+
+.project-actions .project-action-delete:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ffe2e4, #ffcbd0);
+    box-shadow: 0 6px 12px rgba(185, 31, 41, 0.16);
+}
+
+.project-actions .project-action:focus-visible {
+    outline: 3px solid rgba(223, 41, 51, 0.24);
+    outline-offset: 2px;
+}
+
+@media (max-width: 360px) {
+    .project-actions {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,223 @@
+body {
+    min-height: 100vh;
+    background: #f5f6f8;
+    color: #292a33;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit-container {
+    position: relative;
+    width: min(600px, calc(100% - 32px));
+    margin: 42px auto;
+    padding: 28px 30px 30px;
+    overflow: hidden;
+    border: 1px solid #ececf0;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgba(35, 37, 45, 0.08);
+}
+
+.edit-container::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #c91f2a, #ef5359);
+    content: "";
+}
+
+.edit-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 22px;
+    color: #6d6f78;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.edit-back:hover {
+    color: #c5222c;
+}
+
+.edit-back span {
+    font-size: 17px;
+}
+
+.edit-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 23px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f0f0f2;
+}
+
+.edit-icon {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    flex: 0 0 43px;
+    place-items: center;
+    border-radius: 12px;
+    background: #fff0f1;
+    color: #d92631;
+    font-size: 21px;
+}
+
+.edit-heading h1 {
+    margin: 0 0 4px;
+    color: #292a33;
+    font-size: 21px;
+    letter-spacing: -0.5px;
+}
+
+.edit-heading p {
+    margin: 0;
+    color: #858791;
+    font-size: 12px;
+}
+
+.edit-form .form-group {
+    margin-bottom: 17px;
+}
+
+.edit-form .form-group label {
+    margin-bottom: 7px;
+    color: #41434b;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.edit-form .form-group label span {
+    color: #8a8b94;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.edit-form .form-group input[type="text"],
+.edit-form .form-group input[type="url"],
+.edit-form .form-group textarea,
+.edit-form .form-group input[type="file"] {
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #dedfe4;
+    border-radius: 8px;
+    background: #fff;
+    color: #292a33;
+    font: inherit;
+    font-size: 13px;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.edit-form .form-group input[type="text"]:focus,
+.edit-form .form-group input[type="url"]:focus,
+.edit-form .form-group textarea:focus,
+.edit-form .form-group input[type="file"]:focus {
+    border-color: #e0535a;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(223, 41, 51, 0.09);
+}
+
+.edit-form .form-group textarea {
+    min-height: 115px;
+    resize: vertical;
+    line-height: 1.55;
+}
+
+.edit-form .form-group input[type="file"] {
+    min-height: 47px;
+    padding: 7px;
+    background: #fafafb;
+    color: #686a73;
+    font-size: 11px;
+}
+
+.edit-form .form-group input[type="file"]::file-selector-button {
+    margin-right: 9px;
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 6px;
+    background: #fff0f1;
+    color: #bd202a;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 21px;
+    padding-top: 17px;
+    border-top: 1px solid #f0f0f2;
+}
+
+.cancel-button,
+.save-button {
+    display: inline-flex;
+    min-height: 41px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.cancel-button {
+    border-color: #e5e5ea;
+    background: #fff;
+    color: #62646e;
+}
+
+.cancel-button:hover {
+    background: #f7f7f9;
+}
+
+.save-button {
+    background: #df2933;
+    box-shadow: 0 4px 11px rgba(223, 41, 51, 0.18);
+    color: #fff;
+}
+
+.save-button:hover {
+    transform: translateY(-1px);
+    background: #c51f29;
+    box-shadow: 0 6px 14px rgba(223, 41, 51, 0.23);
+}
+
+.cancel-button:focus-visible,
+.save-button:focus-visible,
+.edit-back:focus-visible {
+    outline: 3px solid rgba(223, 41, 51, 0.22);
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .edit-container {
+        margin: 20px auto;
+        padding: 24px 20px;
+    }
+
+    .edit-heading h1 {
+        font-size: 19px;
+    }
+
+    .edit-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cancel-button,
+    .save-button {
+        width: 100%;
+    }
+}
