@@ -72,19 +72,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tambah Karya - Etalase Digital Stella</title>
-    <!-- Hubungkan CSS Base & CSS Form -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.php.css">
     <link rel="stylesheet" href="assets/css/form.css">
-</head>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/edit.css">
 </head>
 <body>
+<main class="form-container edit-container">
+    <a href="index.php" class="edit-back"><span aria-hidden="true">←</span> Kembali ke Etalase</a>
 
-<div class="form-container">
-    <a href="index.php" class="btn btn-secondary" style="margin-bottom: 15px;">&larr; Kembali ke Etalase</a>
-    <h2>Tambah Karya Digital Baru</h2>
+    <div class="edit-heading">
+        <span class="edit-icon" aria-hidden="true">＋</span>
+        <div>
+            <h1>Tambah Karya Digital</h1>
+            <p>Tambahkan karya baru untuk ditampilkan di etalase.</p>
+        </div>
+    </div>
 
     <?php if (!empty($error)): ?>
         <div style="background: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
@@ -92,35 +96,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     <?php endif; ?>
 
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form class="edit-form" action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="nama_project">Nama Karya Digital</label>
-            <input type="text" id="nama_project" name="nama_project" value="<?= htmlspecialchars($_POST['nama_project'] ?? '') ?>" required>
+            <label for="nama_project">Nama Karya</label>
+            <input type="text" id="nama_project" name="nama_project" placeholder="Masukkan nama karya" value="<?= htmlspecialchars($_POST['nama_project'] ?? '') ?>" required>
         </div>
 
         <div class="form-group">
-            <label for="deskripsi">Deskripsi Karya</label>
-            <textarea id="deskripsi" name="deskripsi" required><?= htmlspecialchars($_POST['deskripsi'] ?? '') ?></textarea>
+            <label for="deskripsi">Deskripsi</label>
+            <textarea id="deskripsi" name="deskripsi" placeholder="Ceritakan singkat tentang karya ini" required><?= htmlspecialchars($_POST['deskripsi'] ?? '') ?></textarea>
         </div>
 
         <div class="form-group">
-            <label for="link_project">Link Tautan Project (GitHub / Website Live)</label>
-            <input type="url" id="link_project" name="link_project" value="<?= htmlspecialchars($_POST['link_project'] ?? '') ?>" required>
+            <label for="link_project">Link Project</label>
+            <input type="url" id="link_project" name="link_project" placeholder="https://..." value="<?= htmlspecialchars($_POST['link_project'] ?? '') ?>" required>
         </div>
 
         <div class="form-group">
-            <label for="gambar">Unggah Tangkapan Layar Karya (Maks. 2MB)</label>
+            <label for="gambar">Gambar Karya <span>(Maks. 2MB)</span></label>
             <input type="file" id="gambar" name="gambar" accept="image/png, image/jpeg, image/jpg, image/webp" required>
             
             <div class="preview-box" id="previewBox">
-                <p style="font-size: 12px; color: #6c757d; margin-bottom: 5px;">Pratinjau Gambar:</p>
+                <p style="font-size: 12px; color: #858791; margin-bottom: 8px;">Pratinjau Gambar</p>
                 <img id="imagePreview" src="" alt="Preview Gambar">
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Simpan Karya Digital</button>
+        <div class="edit-actions">
+            <a class="cancel-button" href="index.php">Batal</a>
+            <button class="save-button" type="submit">Simpan Karya</button>
+        </div>
     </form>
-</div>
+</main>
 
 <!-- Script JS Preview Gambar Native -->
 <script>
