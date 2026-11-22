@@ -25,4 +25,3 @@ INSERT INTO users (nama, email, password, role) VALUES
 ('Super Admin Stella', 'superadmin@stella.sch.id', '$2y10$e0MYzXyjpJS7Pd0RVvHwHe1x1b1G5X5K8d.V0eQO6b3Ff9p5K9e.', 'super_admin'),
 ('Admin Stella', 'admin@stella.sch.id', '$2y10$e0MYzXyjpJS7Pd0RVvHwHe1x1b1G5X5K8d.V0eQO6b3Ff9p5K9e.', 'admin'),
 ('Siswa Contoh', 'siswa@stella.sch.id', '$2y10$e0MYzXyjpJS7Pd0RVvHwHe1x1b1G5X5K8d.V0eQO6b3Ff9p5K9e.', 'siswa');
-
